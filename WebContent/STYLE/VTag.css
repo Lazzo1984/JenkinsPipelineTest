@@ -1,0 +1,41 @@
+#rcorners1 {
+    border-radius: 25px;
+    background: red;
+    padding-left: 4px; 
+    padding-right: 4px;
+    width: auto;
+    font-size:12px;
+    color:white;
+}
+#rcorners2 {
+    border-radius: 25px;
+    background: orange;
+    padding-left: 4px; 
+    padding-right: 4px;
+    width: auto;  
+     font-size:12px;
+    color:white;
+}
+#rcorners3 {
+    border-radius: 25px;
+    background: yellow;
+    padding-left: 4px; 
+    padding-right: 4px;
+    width: auto;  
+    font-size:12px;
+    color:black;
+}
+#rcorners4 {
+    border-radius: 25px;
+    background: cyan;
+    padding-left: 4px; 
+    padding-right: 4px;
+    width: auto;   
+    font-size:12px;
+    color:green;
+}
+.linker {
+	font-size:12px;
+	
+	
+}

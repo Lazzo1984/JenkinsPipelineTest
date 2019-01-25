@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Sort and Filter</title>
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+	
+	
+    <!-- CSS -->
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/redmond/jquery-ui.css"/>
+    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="VTag.css" />
+    <style>
+        body { padding-top:50px;font-size: 11px; }
+		span { cursor:pointer; }
+		.color-red 
+		{background-color: red;}
+		.color-orange
+		{background-color:orange;}
+		.color-yellow
+		{background-color:yellow;}
+		.color-cyan
+		{background-color:cyan;}
+		.table thead a {color:white;}
+		
+		.rounded
+		{
+		border-radius: 25px;
+		background: #d9edf7;
+		padding-left: 4px;
+		padding-right; 4px;
+		width: auto;
+		font-size 12px;
+		color: black;
+		}
+		
+    </style>
+
+    <!-- JS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+	<script src="proto2.js"></script>
+    <script src="app.js"></script>
+	
+	
+	
+	
+
+</head>
+<body>
+<div class="" ng-app="sortApp" ng-controller="mainController" style="width:90%;margin-left:auto;margin-right:auto;">
+  
+  <a class="rounded">Prova Arrotondato</a>
+  
+  <div class="alert alert-info">
+    <p>Sort Type: {{ sortType }}</p>
+    <p>Sort Reverse: {{ sortReverse }}</p>
+    <p>Search Query: {{ searchFish }}</p>
+  </div>
+  
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+        <input type="text" class="form-control" placeholder="Search da Fish" ng-model="searchFish">
+
+      </div>      
+    </div>
+  </form>
+ 
+  <table class="table table-bordered">
+    
+    <thead>
+      <tr style="background-color:#29abe0;font-weight:bold;">
+	  <td>
+          <a href="#" ng-click="sortType = 'Name'; sortReverse = !sortReverse">
+            Owasp Issue           
+			<span ng-show="sortType == 'Name' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'Name' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        
+        <td>
+          <a href="#" ng-click="sortType = 'Count'; sortReverse = !sortReverse">
+            Quantity
+            <span ng-show="sortType == 'Count' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'Count' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'Severity'; sortReverse = !sortReverse">
+          Severity
+            <span ng-show="sortType == 'Severity' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'Severity' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'Elenco'; sortReverse = !sortReverse">
+          Products affected by issues
+            <span ng-show="sortType == 'Elenco' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'Elenco' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+		
+		<!-- <td>
+		<a href="#">#</a>
+		</td> -->
+		
+      </tr>
+    </thead>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr id="{{roll.Name}}" ng-repeat="roll in sushi | orderBy:sortType:sortReverse | filter:searchFish">
+		
+        <td>{{ roll.Name }}</td>
+        <td>{{ roll.Count }}</td>
+        <td ng-class="{'color-red': roll.Severity === 'High', 'color-cyan': roll.Severity === 'Information', 'color-yellow': roll.Severity === 'Low', 'color-orange': roll.Severity === 'Medium'}">{{roll.Severity}}</td>
+		<td><a class="rounded">{{ roll.Elenco }}</a></td>
+		<!-- <td>{{ $index +1 }}</td> -->
+        
+      </tr>
+    </tbody>
+    <!-- 
+	Per fare un contatore da qualche parte
+	
+	https://stackoverflow.com/questions/19956074/how-can-i-show-a-count-of-rows-from-an-ng-repeat 
+	
+	-->
+  </table>
+	<!-- <script src="examdable.js"></script> -->
+</div>
+</body>
+</html>

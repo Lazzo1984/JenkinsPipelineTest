@@ -1,0 +1,34 @@
+Linguaggio									risultato/conversion
+javascript
+
+$(document).ready(function(){
+
+		//    Fri Apr 07 20:13:58 UTC 2017
+                //    Wed Jun 20 19:20:44 UTC 2012
+		//var d = Date.parse("Wed Jun 20 19:20:44 +0000 2012");
+
+var d = Date.parse("Wed Jun 20 19:20:44 UTC 2012");  				// 1340220044000
+var k = Date.parse("Wed Jun 20 19:20:44 +0000 2012");				// 1340220044000
+
+$('#p').append(d + "</br>");$('#p').append(k);
+})
+
+JAVA
+
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.util.Date;
+
+public class RegularSandbox {
+
+    public static void main(String[] args) {
+
+        ZonedDateTime utc = ZonedDateTime.now(ZoneOffset.UTC);
+
+        System.out.println("DATETIME = " + Date.from(utc.toInstant()));
+      										//   DATETIME = Fri Apr 07 20:22:45 UTC 2017
+
+
+    }
+}
+highcharts

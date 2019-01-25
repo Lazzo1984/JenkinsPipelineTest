@@ -1,0 +1,39 @@
+.right {
+    position: absolute;
+    margin-left:auto;
+    margin-right:auto;
+    right: 0px;
+    width: auto;
+    /*font-size:14px;*/
+    color:red;
+    /*border: 3px solid #73AD21;*/
+    /*padding: 10px;*/
+}
+.divrelativo
+{
+	position: relative;
+	width:95%;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+.RBanner {
+    position: absolute;
+    margin-left:auto;
+    margin-right:auto;
+    right: 0px;
+    width: auto;
+    /*font-size:14px;*/
+    color: white;
+    /*border: 3px solid #73AD21;*/
+    /*padding: 10px;*/
+}
+.RDiv
+{
+	position: relative;
+	width:95%;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+
