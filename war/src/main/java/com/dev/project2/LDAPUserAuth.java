@@ -85,9 +85,10 @@ public class LDAPUserAuth {
 	public String ldapconn(String username,String password,Integer i) // only x test
 	{
 	//	String r = "CN=Serenthà Riccardo,CN=Users,DC=adlispa.local,sn: Serenthà,givenName: Riccardo";
-		String r = "CN=D'Ambrosio Marco,CN=Users,DC=adlispa.local,sn: D'Ambrosio,givenName: Marco";
+	//	String r = "CN=D'Ambrosio Marco,CN=Users,DC=adlispa.local,sn: D'Ambrosio,givenName: Marco";
 	//	String r = "CN=De Matthaeis Ornella,CN=Consulenti,DC=adlispa.local,sn: De Matthaeis,givenName: Ornella";
 	//	String r = "CN=Hinojosa Valencia Alvaro,CN=Users,DC=adlispa.local,sn: Hinojosa,givenName: Valencia Alvaro";
+		String r = "CN=Pirani Parsifal,CN=Consulenti,DC=adlispa.local,sn: Pirani,givenName: Parsifal";
 		return r;
 	}
 }
