@@ -179,7 +179,7 @@ public class Servlet extends HttpServlet {
 		String dnquery = "";
 		LDAPUserAuth lua = new LDAPUserAuth();
 		try {
-			dnquery = lua.ldapconn(user, pzwdz, 5); // Overloading for testing String ,String,Integer
+			dnquery = lua.ldapconn(user, pzwdz); // Overloading for testing String ,String,Integer
 			if (!"null".equals(dnquery) && dnquery.contains("Consulenti")) {
 				myMap.put(2, dnquery);
 
