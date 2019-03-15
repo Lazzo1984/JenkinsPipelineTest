@@ -249,7 +249,7 @@ public class Analytics {
 
 					if (line.contains("ultima Scansione : ")) {
 						str1 = linecopy.replaceAll("ultima Scansione : ", "");
-						str2 = str1.replaceAll(" by ADLISPA\\\\[a-zA-Z0-9]*", "");
+						str2 = str1.replaceAll(" by ADLISPA\\\\[a-zA-Z0-9]*", ""); // # Debug this 61 Ldap user may contain special char
 						str3 = line.substring(42);
 						line2 = reader.readLine();
 					}
