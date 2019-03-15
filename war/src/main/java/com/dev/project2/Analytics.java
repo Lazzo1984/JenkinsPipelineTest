@@ -16,7 +16,7 @@ public class Analytics {
 		PATH = "/home/cmgroup/REPO/upload/dump.txt";
 	}
 
-	public static class External {
+	public class External {
 		public External() {
 		}
 
@@ -46,7 +46,7 @@ public class Analytics {
 
 	}
 
-	public static class Proto implements Comparable<Proto>, IOrdinableList<Proto> {
+	public class Proto implements Comparable<Proto>, IOrdinableList<Proto> {
 		public Proto(String codelettra, String datapubblicazione, String pentester, String alta, String media,
 				String bassa, String info, String none, String datareport, String vulnerabilities) {
 
@@ -268,7 +268,8 @@ public class Analytics {
 						String giorno = data_temp.substring(0, 2);
 
 						String vulenrabilita = _splitted[2];
-						Proto proto = new Proto();
+						Analytics analytics = new Analytics();
+						Proto proto = analytics.new Proto();
 						proto.datapubblicazione = str2;
 						proto.pentester = str3;
 						proto.codelettra = _splitted[0];

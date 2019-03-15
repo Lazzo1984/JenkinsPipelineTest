@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+    <parent>
+		<groupId>com.dev.project2</groupId>
+		<artifactId>project2-pom</artifactId>
+		<version>4.0.0</version>
+	</parent>
+	
+  <groupId>com.dev.project2</groupId>
+  <artifactId>project2</artifactId>
+  <version>4.0.0</version>
+  <packaging>war</packaging>
+  <name>PROJECT2-WAR</name>
+	
+<properties>
+	
+	<sonar.sources>.</sonar.sources>
+	<sonar.exclusions>**/TemplateAdmin2/vendors/**/*,**/TemplateAdmin2/build/**/*</sonar.exclusions> 
+	
+</properties>
+  
+  <description>Portale Sicurezza WAR</description>
+    
+	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<finalName>project2</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<warSourceDirectory>../WebContent</warSourceDirectory>
+					<failOnMissingWebXml>true</failOnMissingWebXml>
+					<archiveClasses>true</archiveClasses>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+		
+	<dependencies>
+	
+		<dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.0.1</version>
+        <scope>provided</scope>
+		</dependency>
+	
+		<dependency>
+		<groupId>commons-fileupload</groupId>
+		<artifactId>commons-fileupload</artifactId>
+		<version>1.3</version>
+		</dependency>
+		
+		<dependency>
+        <groupId>com.googlecode.owasp-java-html-sanitizer</groupId>
+        <artifactId>owasp-java-html-sanitizer</artifactId>
+	<!--<version>20150501.1</version>-->
+        <version>20171016.1</version>
+		</dependency>
+
+	<dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+	<version>11.0.2</version>
+    	</dependency>
+
+	<dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+	<version>2.9.4</version>
+    	</dependency>
+		
+	</dependencies>
+<licenses>
+    <license>
+      <name>Lispa License, Version 1.0</name>
+      <url>http://cm-maven.adlispa.local/licenza/license.txt</url>
+      <distribution>repo</distribution>
+      <comments>Licenza di prodotti erogati da Lispa S.p.A per Regione Lombardia</comments>
+    </license>
+  </licenses>
+</project>

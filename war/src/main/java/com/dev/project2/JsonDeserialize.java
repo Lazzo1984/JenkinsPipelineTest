@@ -54,7 +54,7 @@ public class JsonDeserialize{
 		//p.selectionSort(myObjects); //Ormai tutti gli elementi sono ordinati e lo saranno sempre
 		return myObjects;		
 	}
-	public static class Proto implements Comparable<Proto>, IOrdinable
+	public class Proto implements Comparable<Proto>, IOrdinable
 	{	
 	    public Integer id;
 	    public String Elettra;
