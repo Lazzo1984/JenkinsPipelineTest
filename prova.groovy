@@ -28,6 +28,13 @@ pipeline {
             }
         }
     }
+            stage('Prova'){
+                steps{
+                    script{
+                        echo "Ciao"
+                    }
+                }
+            }
 }
 }
    
