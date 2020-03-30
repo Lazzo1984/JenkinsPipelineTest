@@ -22,7 +22,8 @@ pipeline {
             script{
                    dir("${Directory}\\${folder}") {
                     echo "Download del branch selezionato da Git"
-                    git branch:'${BRANCH_NAME}',url:'https://github.com/Lazzo1984/JenkinsPipelineTest.git'
+                    //git branch:'${BRANCH_NAME}',url:'https://github.com/Lazzo1984/JenkinsPipelineTest.git'
+                    git url:'https://conslazzatistefano:Nedved2020$@toolbox.sia.eu/bitbucket/scm/powsia/webservicestest.git'
                     echo "Fine Download da Git"
                     }
             }
