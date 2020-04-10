@@ -33,7 +33,7 @@ pipeline {
 				script{
 					build job : 'Build',
 					parameters:
-						[[$class:'StringParameterValue',name:'directory',value:String.valueOf(directory)],
+						[[$class:'StringParameterValue',name:'Directory',value:String.valueOf(Directory)],
 						[$class:'StringParameterValue',name:'BRANCH_NAME',value:String.valueOf(BRANCH_NAME)]]
                         		wait: true
 					}
