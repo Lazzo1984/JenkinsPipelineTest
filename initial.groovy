@@ -43,14 +43,14 @@ pipeline {
 		}
 		post{
 			failure{
-				mail to: 'stefano.lazzati@alice.it',
+				mail to: 'stefano.lazzati1984@gmail.com',
 				subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
 				body: "Build Failed: ${env.BUILD_URL}"
 				}
 			success{
 				script{
 					if(currentBuild.result=='SUCCESS'){
-					mail to: 'stefano.lazzati@alice.it',
+					mail to: 'stefano.lazzati1984@gmail.com',
 					subject: "Pipeline Success: ${currentBuild.fullDisplayName}",
 					body: "Build Success: ${env.BUILD_URL}"
 					}
