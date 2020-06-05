@@ -13,7 +13,7 @@ pipeline {
                         dir("${Directory}\\${BRANCH_NAME}"){
                         echo "inizio della build..."
 			def mvnHome = tool 'M3'
-			bat "${mvnHome}\\bin\\mvn deploy -Dmaven.test.skip=true -DaltDeploymentRepository=nexus::default::http://localhost:8081/repository/maven-releases/"
+			bat "${mvnHome}\\bin\\mvn clean package"
                         echo "Fine della build"
                        }
                         
